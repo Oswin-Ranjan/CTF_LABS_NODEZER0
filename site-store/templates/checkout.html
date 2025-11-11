@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% if done %}
+  <h2>Order Complete</h2>
+  <p>Thanks, {{ name }}! Your order totaling <strong>${{ "%.2f"|format(total) }}</strong> has been placed.</p>
+  <a class="btn" href="{{ url_for('home') }}">Return Home</a>
+{% else %}
+  <h2>Checkout</h2>
+  <p>Order total: <strong>${{ "%.2f"|format(total) }}</strong></p>
+  <form method="post">
+    <label>Name<input name="name" required></label>
+    <label>Address<textarea name="address" required></textarea></label>
+    <label>Email<input type="email" name="email" required></label>
+    <button class="btn" type="submit">Place Order</button>
+  </form>
+{% endif %}
+{% endblock %}

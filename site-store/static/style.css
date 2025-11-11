@@ -1,0 +1,219 @@
+:root {
+  --bg: #0b0b0b;
+  --card: #111111;
+  --accent: #c62828;
+  --accent-dark: #8b0000;
+  --text: #f2f2f2;
+  --muted: #bfbfbf;
+  --glow: rgba(198, 40, 40, 0.5);
+}
+
+* { box-sizing: border-box; transition: all 0.2s ease; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, Arial, sans-serif;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 12px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(198, 40, 40, 0.3);
+}
+.topbar h1 {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.topbar nav a {
+  color: var(--text);
+  margin-left: 12px;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+}
+.topbar nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px var(--glow);
+}
+
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 8px;
+  margin-top: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+.foot {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.small { color: var(--muted); }
+.btn {
+  background: var(--accent);
+  color: var(--text);
+  border: 0;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  box-shadow: 0 0 8px rgba(198, 40, 40, 0.3);
+}
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--glow);
+}
+.btn.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+.btn.secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 10px var(--glow);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #222;
+  background: #0f0f0f;
+  color: var(--text);
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 6px var(--glow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+table th, table td {
+  padding: 10px;
+  border-bottom: 1px solid #222;
+  text-align: left;
+}
+table th {
+  color: var(--accent);
+}
+a.link {
+  color: var(--accent);
+  text-decoration: none;
+}
+a.link:hover {
+  text-decoration: underline;
+  color: var(--accent-dark);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.product-card {
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px var(--glow);
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  filter: brightness(0.9);
+  transition: all 0.3s ease;
+}
+.product-card:hover img {
+  filter: brightness(1.05);
+}
+.product-info {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.product-info h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+}
+.product-info .desc {
+  color: #bbb;
+  font-size: 14px;
+  flex: 1;
+}
+.product-info .price {
+  font-weight: bold;
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.product-view {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.product-large {
+  width: 350px;
+  height: 260px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+.product-view .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-view .price {
+  font-size: 20px;
+  color: var(--accent);
+  margin: 8px 0;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+body {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

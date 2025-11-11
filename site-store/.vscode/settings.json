@@ -1,0 +1,8 @@
+{
+  // Use the workspace's .venv as the default Python interpreter on Windows.
+  // This keeps the interpreter focused on the site-store folder regardless of
+  // which nested folder is opened in the editor.
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  // Ensure the VS Code terminal will try to activate the venv automatically
+  "python.terminal.activateEnvironment": true
+}
