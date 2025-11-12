@@ -3,31 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NodeZer0 – Home</title>
+  <title>NodeZer0 – Login</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header class="topbar">
   <div class="brand">NodeZer0</div>
   <nav class="nav">
-    <a href="index.html" class="active">Home</a>
-    <a href="login.html">Login</a>
+    <a href="index.html">Home</a>
+    <a href="login.html" class="active">Login</a>
     <a href="register.html">Register</a>
   </nav>
 </header>
 
 <main class="container">
-  <section class="card home">
-    <h1>Welcome to NodeZer0</h1>
-    <p class="lead">Access your account or create a new one below.</p>
-    <div class="actions">
-      <a href="login.html" class="btn">Login</a>
-      <a href="register.html" class="btn secondary">Register</a>
-    </div>
+  <section class="card auth">
+    <h2>Sign In</h2>
+    <form class="form" action="welcome.html" method="get">
+      <label>Username<input name="username" required></label>
+      <label>Password<input type="password" name="password" required></label>
+      <button class="btn" type="submit">Login</button>
+    </form>
   </section>
 </main>
 
 <footer class="foot">NodeZer0 • Keep Growing!!</footer>
 </body>
 </html>
-
