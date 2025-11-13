@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NodeZer0 - Feedback Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">Feedback Portal</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="feedback.html" class="active">Feedback</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="card form-section">
+    <h2>Send Your Feedback</h2>
+
+    <form class="form" action="success.html" method="get">
+      <label>Name<input name="name" placeholder="Your name" required></label>
+      <label>Email<input type="email" name="email" placeholder="you@xyz.com" required></label>
+      <label>Feedback<textarea name="feedback" rows="5" placeholder="Write your feedback here..." required></textarea></label>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+
+  </section>
+</main>
+
+<footer class="foot">NodeZer0 • Keep Growing!!</footer>
+</body>
+</html>
