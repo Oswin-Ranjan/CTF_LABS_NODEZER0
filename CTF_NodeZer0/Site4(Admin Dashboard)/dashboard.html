@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NodeZer0 - Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.auth-required { display: none; }
+:target ~ .content .auth-required { display: block; }
+:target ~ .content .no-auth { display: none; }
+</style>
+
+</head>
+<body>
+
+<a id="auth1"></a>
+
+<header class="topbar">
+  <div class="brand">Admin Panel</div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a class="active" href="dashboard.html">Dashboard</a>
+  </nav>
+</header>
+
+<div class="content container">
+
+  <div class="no-auth card">
+    <h2>⚠ Admin Access Required</h2>
+    <p>You must log in to access the dashboard.</p>
+    <a href="login.html" class="btn">Go to Login</a>
+  </div>
+
+  <div class="auth-required">
+
+    <section class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h2>Admin Dashboard</h2>
+
+        <a href="login.html" class="btn secondary">Logout</a>
+      </div>
+
+      <div class="grid">
+
+        <div class="mini-card">
+          Total Users<br><span>4,921</span>
+        </div>
+
+        <div class="mini-card">
+          Active Labs<br><span>38</span>
+        </div>
+
+        <div class="mini-card">
+          Reported Vulns<br><span>127</span>
+        </div>
+
+        <div class="mini-card">
+          Pending Challenges<br><span>12</span>
+        </div>
+
+        <div class="mini-card">
+          Challenges Solved<br><span>54,293</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="card table-section">
+      <h3>Recent Community Activity</h3>
+      <table>
+        <tr>
+          <th>Username</th>
+          <th>Role</th>
+          <th>Last Challenge Solved</th>
+        </tr>
+
+        <tr>
+          <td>ZeroByte</td>
+          <td>Admin</td>
+          <td>SQL Injection – Hard</td>
+        </tr>
+
+        <tr>
+          <td>CyberWolf</td>
+          <td>Moderator</td>
+          <td>XSS Filter Bypass</td>
+        </tr>
+
+        <tr>
+          <td>Anon_404</td>
+          <td>Member</td>
+          <td>CSRF Token Exploit</td>
+        </tr>
+
+        <tr>
+          <td>DarkKnight</td>
+          <td>Member</td>
+          <td>Broken Auth – Easy</td>
+        </tr>
+
+      </table>
+    </section>
+
+  </div>
+</div>
+
+<footer class="foot">NodeZer0 • Keep Growing!!</footer>
+
+</body>
+</html>

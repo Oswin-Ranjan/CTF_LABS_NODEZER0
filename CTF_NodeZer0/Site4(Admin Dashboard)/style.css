@@ -1,0 +1,63 @@
+:root{
+  --bg:#0b0b0b;--card:#111;--accent:#c62828;--accent-dark:#8b0000;
+  --text:#f2f2f2;--muted:#bfbfbf;--glow:rgba(198,40,40,0.35);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:radial-gradient(circle at top left,#2a0000 0%,var(--bg) 60%);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+}
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 20px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+  box-shadow:0 6px 30px var(--glow);
+}
+.brand{font-weight:700;font-size:20px;}
+.nav a{
+  color:var(--text);text-decoration:none;margin-left:12px;
+  padding:8px 10px;border-radius:6px;background:rgba(0,0,0,0.15);
+}
+.nav a:hover,.nav a.active{background:rgba(255,255,255,0.1);}
+.container{max-width:1000px;margin:24px auto;padding:0 16px;}
+.card{
+  background:var(--card);
+  padding:22px;
+  border-radius:10px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.6);
+}
+.home{text-align:center;}
+.grid{
+  display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;
+}
+.mini-card{
+  flex:1;min-width:150px;
+  background:#1a1a1a;padding:16px;border-radius:8px;
+  text-align:center;box-shadow:0 0 8px rgba(0,0,0,0.5);
+}
+.mini-card span{color:var(--accent);font-size:22px;font-weight:700;}
+.table-section table{
+  width:100%;border-collapse:collapse;margin-top:14px;
+}
+table th,table td{
+  border:1px solid #222;padding:10px;text-align:left;
+}
+table th{background:#1c1c1c;color:var(--accent);}
+table tr:nth-child(even){background:#141414;}
+.btn{
+  background:var(--accent);color:var(--text);
+  padding:10px 16px;border-radius:8px;text-decoration:none;
+  display:inline-block;box-shadow:0 0 10px var(--glow);
+}
+.btn:hover{background:var(--accent-dark);}
+.btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.2);}
+.btn.secondary:hover{border-color:var(--accent);}
+input{
+  width:100%;padding:10px;margin-top:6px;
+  background:#0f0f0f;border:1px solid #222;border-radius:6px;
+  color:var(--text);
+}
+.form label{display:block;margin:10px 0;}
+.foot{text-align:center;color:var(--muted);padding:18px;}
