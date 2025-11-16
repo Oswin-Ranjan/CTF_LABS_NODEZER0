@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NodeZer0 – Profile</title>
+<link rel="stylesheet" href="style.css" />
+
+<style>
+.auth-required { display: none; }
+:target ~ .content .auth-required { display: block; }
+:target ~ .content .no-auth { display: none; }
+</style>
+
+</head>
+<body>
+
+<a id="auth1"></a>
+
+<header class="topbar">
+  <div class="brand">NodeZer0</div>
+  <nav class="nav">
+    <a href="profile.html" class="active">Profile</a>
+    <a href="index.html">Logout</a>
+  </nav>
+</header>
+
+<div class="content container">
+
+  <div class="no-auth card" style="text-align:center;">
+    <h2>⚠ Please Login First</h2>
+    <p>You must sign in before accessing your profile.</p>
+    <a href="login.html" class="btn">Go to Login</a>
+  </div>
+
+  <div class="auth-required">
+
+    <section class="card profile">
+      <div class="left">
+        <div class="avatar">User</div>
+        <h2>User</h2>
+        <p class="muted">Member since 2022</p>
+      </div>
+
+      <div class="right">
+        <h3>About</h3>
+        <p>A NodeZer0 member.</p>
+        <p>Enjoys coding and solving challenges.</p>
+        <h4>Contact Info</h4>
+        <p>Email: user@xyz.com</p>
+        <p>Phone: +91 12315 54554</p>
+      </div>
+    </section>
+  </div>
+</div>
+<footer class="foot">NodeZer0 • Keep Growing!!</footer>
+</body>
+</html>
