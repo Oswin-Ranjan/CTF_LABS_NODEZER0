@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ENS</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="explorer">
+  <div class="explorer-top">
+    <h2>ENS Name Details</h2>
+  </div>
+
+  <div class="panel">
+    <h3 id="ens"></h3>
+    <table id="records"></table>
+  </div>
+</div>
+
+<script>
+fetch("/api/ens").then(r=>r.json()).then(d=>{
+  document.getElementById("ens").innerText = d.ens;
+  let table = document.getElementById("records");
+  for (let k in d.records){
+    table.innerHTML += `<tr><td>${k}</td><td>${d.records[k]}</td></tr>`;
+  }
+});
+</script>
+
+</body>
+</html>
+
+

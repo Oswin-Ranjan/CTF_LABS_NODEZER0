@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wallet</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="explorer">
+  <div class="explorer-top">
+    <h2>Web3 Explorer</h2>
+  </div>
+
+  <div class="panel">
+    <h3>Wallet Overview</h3>
+
+    <p class="label">Address</p>
+    <p class="mono" id="address"></p>
+
+    <div class="grid">
+      <div>
+        <span class="label">Balance</span>
+        <p id="balance"></p>
+      </div>
+      <div>
+        <span class="label">Primary ENS</span>
+        <p id="ens"></p>
+      </div>
+      <div>
+        <span class="label">NFTs Owned</span>
+        <p id="nfts"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+fetch("/api/wallet").then(r=>r.json()).then(d=>{
+  document.getElementById("address").innerText = d.wallet;
+  document.getElementById("balance").innerText = d.balance;
+  document.getElementById("ens").innerText = d.ens;
+  document.getElementById("nfts").innerText = d.nfts;
+});
+</script>
+
+</body>
+</html>
+
+

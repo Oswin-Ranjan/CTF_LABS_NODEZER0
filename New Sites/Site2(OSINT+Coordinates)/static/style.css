@@ -1,0 +1,19 @@
+body {
+  background: linear-gradient(135deg,#0f172a,#020617);
+  color: #e5e7eb;
+  font-family: Segoe UI, system-ui, sans-serif;
+}
+.post {
+  width: 520px;
+  margin: 80px auto;
+  padding: 26px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+}
+img {
+  display:block;
+  margin: 30px auto;
+  border-radius: 12px;
+}
+a { color:#38bdf8; }
+

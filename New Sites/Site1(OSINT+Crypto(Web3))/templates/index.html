@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="twitter-wrapper">
+  <div class="twitter-banner"></div>
+  <div class="twitter-profile">
+    <div class="avatar"></div>
+
+    <h2 id="username"></h2>
+    <p class="handle" id="handle"></p>
+    <p class="bio" id="bio"></p>
+
+    <p><b>💸 tips:</b> <span class="wallet" id="wallet"></span></p>
+
+    <div class="stats">
+      <span><b>214</b> Following</span>
+      <span><b>1,042</b> Followers</span>
+    </div>
+  </div>
+</div>
+
+<script>
+fetch("/api/profile").then(r=>r.json()).then(d=>{
+  document.getElementById("username").innerText = d.username;
+  document.getElementById("handle").innerText = "@"+d.username;
+  document.getElementById("bio").innerText = d.bio;
+  document.getElementById("wallet").innerText = d.wallet;
+});
+</script>
+
+<!--
+dev_note:
+been doing a lot of "lookups" lately… names have more power than addresses
+-->
+
+</body>
+</html>
+
+
