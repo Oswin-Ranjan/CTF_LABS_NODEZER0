@@ -17,26 +17,18 @@ def make_image_with_exif(path, lat, lon, alt):
     img = Image.new("RGB", (W, H))
     draw = ImageDraw.Draw(img)
 
-    # Sky
     for y in range(H//2):
         draw.line((0,y,W,y), fill=(30, 60 + y//4, 120 + y//6))
 
-    # Mountains
     for i in range(6):
         base = random.randint(350, 550)
         peak = random.randint(120, 280)
         x = i * 220
         draw.polygon([(x, base), (x+240, base), (x+120, peak)], fill=(60, 60, 70))
 
-    # Land
     draw.rectangle((0, 520, W, H), fill=(50, 110, 60))
-
-    # Road
     draw.polygon([(540, H), (660, H), (620, 520), (580, 520)], fill=(70,70,70))
-
-    # Sun
     draw.ellipse((900, 80, 980, 160), fill=(255, 200, 120))
-
     draw.text((40, 40), "Expedition Capture", fill=(255,255,255))
 
     lat_dms = to_dms(lat)

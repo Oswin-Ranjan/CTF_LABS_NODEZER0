@@ -5,8 +5,6 @@ from collections import defaultdict
 app = Flask(__name__)
 app.secret_key = "ctf_secret_key"
 
-# ------------------ UTILITIES ------------------
-
 def gen_wallet():
     return "0x" + ''.join(random.choices("abcdef0123456789", k=40))
 
@@ -15,8 +13,6 @@ def gen_ens():
 
 def gen_flag():
     return "FLAG{" + ''.join(random.choices(string.ascii_lowercase, k=10)) + "}"
-
-# ------------------ RATE LIMITER ------------------
 
 visits = defaultdict(list)
 
@@ -32,8 +28,6 @@ def guard():
     ip = request.remote_addr
     rate_limit(ip)
 
-# ------------------ CORE ROUTES ------------------
-
 @app.route("/")
 def index():
     if "wallet" not in session:
@@ -42,7 +36,6 @@ def index():
         session["flag"] = gen_flag()
     return render_template("index.html")
 
-# REAL PATHS (not obvious)
 @app.route("/lookup")
 def wallet():
     return render_template("wallet.html")
@@ -50,8 +43,6 @@ def wallet():
 @app.route("/name")
 def ens():
     return render_template("ens.html")
-
-# ------------------ API ------------------
 
 @app.route("/api/profile")
 def profile_api():
@@ -82,8 +73,6 @@ def ens_api():
         }
     })
 
-# ------------------ DECOY ROUTES ------------------
-
 @app.route("/explorer")
 def fake1():
     return "<h3>Explorer temporarily unavailable.</h3>"
@@ -100,8 +89,6 @@ def fake3():
 def fake4():
     return "<h3>Identity service offline.</h3>"
 
-# ------------------ FAKE API ENDPOINTS ------------------
-
 @app.route("/api/tx")
 def fake_tx():
     return jsonify({"error":"transaction not found"})
@@ -110,21 +97,15 @@ def fake_tx():
 def fake_addr():
     return jsonify({"status":"unknown address"})
 
-# ------------------ FLAG SUBMISSION ------------------
-
 @app.route("/api/submit", methods=["POST"])
 def submit_flag():
     if request.json.get("flag") == session["flag"]:
         return jsonify({"status":"correct"})
     return jsonify({"status":"wrong"})
 
-# ------------------ ERROR HANDLER ------------------
-
 @app.errorhandler(429)
 def ratelimited(e):
     return "<h3>Too many requests. Slow down, detective.</h3>", 429
-
-# ------------------ RUN ------------------
 
 if __name__ == "__main__":
     app.run(debug=True)
